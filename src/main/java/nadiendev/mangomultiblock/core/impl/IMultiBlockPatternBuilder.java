@@ -1,6 +1,6 @@
-package org.mangorage.mangomultiblock.core.impl;
+package nadiendev.mangomultiblock.core.impl;
 
-import org.mangorage.mangomultiblock.core.SimpleMultiBlockPattern;
+import nadiendev.mangomultiblock.core.SimpleMultiBlockPattern;
 
 public interface IMultiBlockPatternBuilder {
     <T extends IMultiBlockPattern> T build(IPatternBuilder<T> builder);

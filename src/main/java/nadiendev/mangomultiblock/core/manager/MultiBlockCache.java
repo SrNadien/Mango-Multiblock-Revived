@@ -1,7 +1,7 @@
-package org.mangorage.mangomultiblock.core.manager;
+package nadiendev.mangomultiblock.core.manager;
 
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockCache;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockCache;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
 
 public class MultiBlockCache<T extends IMultiBlockPattern> implements IMultiBlockCache<T> {
     private T cachedResult;

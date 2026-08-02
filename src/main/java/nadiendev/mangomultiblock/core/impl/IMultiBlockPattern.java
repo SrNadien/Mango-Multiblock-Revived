@@ -1,12 +1,12 @@
-package org.mangorage.mangomultiblock.core.impl;
+package nadiendev.mangomultiblock.core.impl;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
-import org.mangorage.mangomultiblock.core.misc.Util;
-import org.mangorage.mangomultiblock.core.misc.MultiblockMatchResult;
+import nadiendev.mangomultiblock.core.misc.Util;
+import nadiendev.mangomultiblock.core.misc.MultiblockMatchResult;
 
 import java.util.function.BiPredicate;
 

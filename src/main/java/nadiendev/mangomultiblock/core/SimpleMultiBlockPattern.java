@@ -1,15 +1,14 @@
-package org.mangorage.mangomultiblock.core;
+package nadiendev.mangomultiblock.core;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.TickTask;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
-import org.mangorage.mangomultiblock.core.misc.MultiBlockOffsetPos;
-import org.mangorage.mangomultiblock.core.misc.MultiblockMatchResult;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.misc.MultiBlockOffsetPos;
+import nadiendev.mangomultiblock.core.misc.MultiblockMatchResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +60,7 @@ public final class SimpleMultiBlockPattern implements IMultiBlockPattern {
 
     @Override
     public void construct(Level level, BlockPos blockPos, BiPredicate<Character, BlockState> stateBiPredicate, Rotation rotation) {
-        if (level.isClientSide) return;
+        if (level.isClientSide()) return;
         if (level.getServer() == null) return;
         for (MultiBlockOffsetPos multiBlockOffsetPos : multiBlockOffsetPosList) {
             char character = multiBlockOffsetPos.character();
@@ -69,7 +68,7 @@ public final class SimpleMultiBlockPattern implements IMultiBlockPattern {
             if (stateSupplier != null) {
                 var pos = blockPos.offset(multiBlockOffsetPos.offsetPos().rotate(rotation));
                 var state = stateSupplier.get();
-                if (stateBiPredicate.test(character, state)) level.getServer().tell(new TickTask(3, () -> level.setBlock(pos, state, Block.UPDATE_ALL)));
+                if (stateBiPredicate.test(character, state)) level.getServer().execute(() -> level.setBlock(pos, state, Block.UPDATE_ALL));
             }
         }
     }

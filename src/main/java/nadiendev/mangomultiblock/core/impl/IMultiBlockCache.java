@@ -1,4 +1,4 @@
-package org.mangorage.mangomultiblock.core.impl;
+package nadiendev.mangomultiblock.core.impl;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;

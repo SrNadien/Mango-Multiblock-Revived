@@ -1,11 +1,11 @@
-package org.mangorage.mangomultiblock;
+package nadiendev.mangomultiblock;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
-import org.mangorage.mangomultiblock.core.Constants;
-import org.mangorage.mangomultiblock.core.registry.ItemRegistry;
+import nadiendev.mangomultiblock.core.Constants;
+import nadiendev.mangomultiblock.core.registry.ItemRegistry;
 
 @Mod(Constants.MODID)
 public class MangoMultiBlock {

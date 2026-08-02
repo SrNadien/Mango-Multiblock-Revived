@@ -1,4 +1,4 @@
-package org.mangorage.mangomultiblock.core;
+package nadiendev.mangomultiblock.core;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -6,11 +6,11 @@ import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPatternBuilder;
-import org.mangorage.mangomultiblock.core.impl.IPatternBuilder;
-import org.mangorage.mangomultiblock.core.misc.MultiBlockOffsetPos;
-import org.mangorage.mangomultiblock.core.misc.Util;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPatternBuilder;
+import nadiendev.mangomultiblock.core.impl.IPatternBuilder;
+import nadiendev.mangomultiblock.core.misc.MultiBlockOffsetPos;
+import nadiendev.mangomultiblock.core.misc.Util;
 
 import java.util.ArrayList;
 import java.util.HashSet;

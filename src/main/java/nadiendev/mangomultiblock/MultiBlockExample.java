@@ -1,14 +1,14 @@
-package org.mangorage.mangomultiblock;
+package nadiendev.mangomultiblock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.StairBlock;
-import org.mangorage.mangomultiblock.core.Constants;
-import org.mangorage.mangomultiblock.core.SimpleMultiBlockAislePatternBuilder;
-import org.mangorage.mangomultiblock.core.SimpleMultiBlockPatternBuilder;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
-import org.mangorage.mangomultiblock.core.manager.MultiBlockManager;
+import nadiendev.mangomultiblock.core.Constants;
+import nadiendev.mangomultiblock.core.SimpleMultiBlockAislePatternBuilder;
+import nadiendev.mangomultiblock.core.SimpleMultiBlockPatternBuilder;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.manager.MultiBlockManager;
 
 public class MultiBlockExample {
     public static final MultiBlockManager MANAGER = MultiBlockManager.getOrCreate(Constants.MODID, "miners");

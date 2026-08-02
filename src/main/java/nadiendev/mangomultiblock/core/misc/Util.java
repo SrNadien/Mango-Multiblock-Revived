@@ -1,9 +1,9 @@
-package org.mangorage.mangomultiblock.core.misc;
+package nadiendev.mangomultiblock.core.misc;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Rotation;
-import org.mangorage.mangomultiblock.core.misc.MultiBlockOffsetPos;
+import nadiendev.mangomultiblock.core.misc.MultiBlockOffsetPos;
 
 import java.util.ArrayList;
 import java.util.Arrays;

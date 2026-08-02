@@ -1,9 +1,9 @@
-package org.mangorage.mangomultiblock.core.impl;
+package nadiendev.mangomultiblock.core.impl;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
-import org.mangorage.mangomultiblock.core.misc.MultiBlockOffsetPos;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.misc.MultiBlockOffsetPos;
 
 import java.util.List;
 import java.util.Map;

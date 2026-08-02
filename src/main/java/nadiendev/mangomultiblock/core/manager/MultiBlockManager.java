@@ -1,21 +1,21 @@
-package org.mangorage.mangomultiblock.core.manager;
+package nadiendev.mangomultiblock.core.manager;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Rotation;
-import org.mangorage.mangomultiblock.core.impl.IMultiBlockPattern;
+import nadiendev.mangomultiblock.core.impl.IMultiBlockPattern;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MultiBlockManager {
-    private static final HashMap<ResourceLocation, MultiBlockManager> MANAGERS = new HashMap<>();
+    private static final HashMap<Identifier, MultiBlockManager> MANAGERS = new HashMap<>();
 
     public static MultiBlockManager getOrCreate(String modID, String managerID) {
-        return MANAGERS.computeIfAbsent(ResourceLocation.fromNamespaceAndPath(modID, managerID), MultiBlockManager::new);
+        return MANAGERS.computeIfAbsent(Identifier.fromNamespaceAndPath(modID, managerID), MultiBlockManager::new);
     }
 
     public static List<MultiBlockManager> getManagers() {
@@ -31,19 +31,19 @@ public class MultiBlockManager {
     }
 
     private final String modID;
-    private final ResourceLocation managerID;
-    private final Map<ResourceLocation, RegisteredMultiBlockPattern> MULTIBLOCKS = new HashMap<>();
+    private final Identifier managerID;
+    private final Map<Identifier, RegisteredMultiBlockPattern> MULTIBLOCKS = new HashMap<>();
 
-    private MultiBlockManager(ResourceLocation ID) {
+    private MultiBlockManager(Identifier ID) {
         this.modID = ID.getNamespace();
         this.managerID = ID;
     }
 
-    public ResourceLocation getID() {
+    public Identifier getID() {
         return managerID;
     }
 
-    public <E extends IMultiBlockPattern> E register(ResourceLocation ID, E blockPattern) {
+    public <E extends IMultiBlockPattern> E register(Identifier ID, E blockPattern) {
         if (MULTIBLOCKS.containsKey(ID)) throw new IllegalStateException("Already registered a Multiblock with ID: %s to Manager %s".formatted(ID, managerID));
         var rmbp = new RegisteredMultiBlockPattern(this, ID, blockPattern);
         MULTIBLOCKS.put(ID, rmbp);
@@ -51,7 +51,7 @@ public class MultiBlockManager {
     }
 
     public <E extends IMultiBlockPattern> E register(String ID, E blockPattern) {
-        return register(ResourceLocation.fromNamespaceAndPath(modID, ID), blockPattern);
+        return register(Identifier.fromNamespaceAndPath(modID, ID), blockPattern);
     }
 
     public @Nullable RegisteredMultiBlockPattern findStructure(Level level, BlockPos blockPos, Rotation rotation) {
@@ -62,11 +62,11 @@ public class MultiBlockManager {
         return null;
     }
 
-    public @Nullable RegisteredMultiBlockPattern getStructure(ResourceLocation ID) {
+    public @Nullable RegisteredMultiBlockPattern getStructure(Identifier ID) {
         return MULTIBLOCKS.get(ID);
     }
 
     public @Nullable RegisteredMultiBlockPattern getStructure(String ID) {
-        return getStructure(ResourceLocation.fromNamespaceAndPath(modID, ID));
+        return getStructure(Identifier.fromNamespaceAndPath(modID, ID));
     }
 }
