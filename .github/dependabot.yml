@@ -1,0 +1,37 @@
+# Mantiene al día las versiones de las actions de los workflows.
+# Dependabot solo lee este archivo desde la rama por defecto, así que
+# cada rama de versión se declara con su propio target-branch.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "Neo/1.21.1"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore"
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "Neo/26.1.2"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore"
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "Neo/26.3"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore"
+    groups:
+      actions:
+        patterns: ["*"]
