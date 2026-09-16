@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.141'
+    id 'net.neoforged.moddev' version '2.0.147'
 }
 
 
@@ -58,8 +58,9 @@ neoForge {
         server {
             server()
         }
-        data {
-            data()
+        clientData {
+            clientData()
+            programArguments.addAll '--mod', "${mod_id}", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
     }
 
@@ -78,6 +79,8 @@ tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             mcversion              : mcversion,
             minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neoforge_version_range : neoforge_version_range,
             mod_version            : mod_version,
             mod_id                 : mod_id,
             modid                  : mod_id,
