@@ -14,6 +14,9 @@ public class MangoMultiBlock {
         // Registrar items
         ItemRegistry.init(modEventBus);
         
+        // Registrar los multiblocks de ejemplo
+        MultiBlockExample.init();
+        
         // Setup común
         modEventBus.addListener(this::commonSetup);
     }
